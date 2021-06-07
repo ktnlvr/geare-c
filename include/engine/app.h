@@ -1,3 +1,6 @@
+#ifndef __GEARE_APP__H__
+#define __GEARE_APP__H__
+
 #include <malloc.h>
 #include <stdint.h>
 
@@ -54,3 +57,5 @@ void geare_run() {
 
     if (table.kill) table.kill();
 }
+
+#endif
