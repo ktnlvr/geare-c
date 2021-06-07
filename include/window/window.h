@@ -4,7 +4,7 @@
 #include "../platform.h"
 #include "./window_desc.h"
 
-void geare_make_window(window);
+void geare_make_window(geare_window_desc);
 void geare_show_window();
 void geare_close_window();
 

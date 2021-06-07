@@ -23,9 +23,10 @@ void geare_make_window__xlib(geare_window_state__xlib* target,
     target->display = XOpenDisplay(NULL);
     target->screen = DefaultScreenOfDisplay(target->display);
     target->rootWindow = DefaultRootWindow(target->display);
-    target->window =
-        XCreateWindow(target->display, target->rootWindow, 0, 0, 256, 256, 0, 0,
-                      CopyFromParent, CopyFromParent, 0, NULL);
+    target->window = XCreateWindow(target->display, target->rootWindow, desc.x,
+                                   desc.y, desc.width, desc.height, 0, 0,
+                                   CopyFromParent, CopyFromParent, 0, NULL);
+    XStoreName(target->display, target->window, (char*)desc.window_title);
 }
 
 void geare_show_window__xlib(geare_window_state__xlib* target) {
