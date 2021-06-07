@@ -6,9 +6,6 @@
 // Application descriptor, responsible for all the system-dependent application
 // properties e.g. window title
 typedef struct geare_app_desc_t {
-    const char* window_title;
-    uint32_t width, height;
-    uint64_t flags;
 } geare_app_desc_t;
 
 // Contains all the engine data and information

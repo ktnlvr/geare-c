@@ -1,24 +1,23 @@
 #include "../include/engine/app.h"
-#include "../include/window/os/window_xlib.h"
-
-static geare_window_state_xlib window_state;
+#include "../include/window/window.h"
 
 /* Nothin', just chillin' */
 void tick() { ; }
 
-void init() {
-    geare_create_window_xlib(&window_state);
-    geare_show_window_xlib(&window_state);
-}
+void init() { geare_show_window(); }
 
 int main() {
-    geare_app_desc_t desc = {
-        .window_title = "Test Window",
-        .height = 256,
-        .width = 256,
-    };
+    geare_app_desc_t app_desc = {};
 
-    geare_engine_create(desc, nullptr);
+    geare_window_desc w_desc = {.height = 256,
+                                .width = 256,
+                                .x = 256,
+                                .y = 256,
+                                .window_title = "Test Window"};
+
+    geare_make_window(w_desc);
+
+    geare_engine_create(app_desc, nullptr);
 
     geare_engine_t* engine_ptr = geare_engine_instance();
     engine_ptr->callback_table.init = init;
