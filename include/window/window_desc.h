@@ -3,10 +3,10 @@
 
 #include <stdint.h>
 
-typedef struct geare_window_desc {
+typedef struct geare_window_desc_t {
     const char* window_title;
     uint32_t x, y;
     uint32_t height, width;
-} geare_window_desc;
+} geare_window_desc_t;
 
 #endif

@@ -19,7 +19,7 @@ typedef struct geare_window_state__xlib {
 } geare_window_state__xlib;
 
 void geare_make_window__xlib(geare_window_state__xlib* target,
-                             geare_window_desc desc) {
+                             geare_window_desc_t desc) {
     target->display = XOpenDisplay(NULL);
     target->screen = DefaultScreenOfDisplay(target->display);
     target->rootWindow = DefaultRootWindow(target->display);

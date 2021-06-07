@@ -4,7 +4,7 @@
 #include "../platform.h"
 #include "./window_desc.h"
 
-void geare_make_window(geare_window_desc);
+void geare_make_window(geare_window_desc_t);
 void geare_show_window();
 void geare_close_window();
 
@@ -13,7 +13,7 @@ void geare_close_window();
 
 static geare_window_state__xlib _geare_xlib_state;
 
-void geare_make_window(geare_window_desc w) {
+void geare_make_window(geare_window_desc_t w) {
     geare_make_window__xlib(&_geare_xlib_state, w);
     return;
 }
