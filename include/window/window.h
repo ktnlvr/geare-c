@@ -5,6 +5,7 @@
 #include "./window_desc.h"
 
 void geare_make_window(geare_window_desc_t);
+void geare_create_opengl_ctx();
 void geare_show_window();
 void geare_close_window();
 
