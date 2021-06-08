@@ -6,6 +6,8 @@ void tick() { ; }
 
 void init() { geare_show_window(); }
 
+void kill() { geare_close_window(); }
+
 int main() {
     geare_app_desc_t app_desc = {};
 
@@ -22,6 +24,8 @@ int main() {
     geare_engine_t* engine_ptr = geare_engine_instance();
     engine_ptr->callback_table.init = init;
     engine_ptr->callback_table.tick = tick;
+    engine_ptr->callback_table.kill = kill;
+    ;
 
     geare_run();
 
