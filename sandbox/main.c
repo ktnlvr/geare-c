@@ -1,15 +1,34 @@
+
+#include <GLES3/gl3.h>
+
 #include "../include/engine/app.h"
 #include "../include/window/window.h"
 
+unsigned int buffer;
+
+void init() {
+    geare_show_window();
+
+    float positions[6] = {-.5, -.5, 0, .5, .5, -.5};
+
+    glGenBuffers(1, &buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, buffer);
+    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), &positions,
+                 GL_STATIC_DRAW);
+
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
+
 void tick() {
-    glClearColor(1.0, 1.0, 1.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glViewport(0, 0, 256, 256);
+
+    glDrawArrays(GL_TRIANGLES, 0, 3);
 
     geare_swap_buffers();
 }
-
-void init() { geare_show_window(); }
 
 void kill() { geare_close_window(); }
 
