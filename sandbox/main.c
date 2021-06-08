@@ -1,8 +1,13 @@
 #include "../include/engine/app.h"
 #include "../include/window/window.h"
 
-/* Nothin', just chillin' */
-void tick() { ; }
+void tick() {
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glViewport(0, 0, 256, 256);
+
+    geare_swap_buffers();
+}
 
 void init() { geare_show_window(); }
 
